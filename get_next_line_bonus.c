@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctilda <ctilda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 06:29:13 by ctilda            #+#    #+#             */
-/*   Updated: 2020/12/09 18:00:56 by ctilda           ###   ########.fr       */
+/*   Created: 2020/12/09 09:49:36 by ctilda            #+#    #+#             */
+/*   Updated: 2020/12/09 18:04:26 by ctilda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void			ft_bzero(void *s, size_t n)
 {
@@ -64,26 +64,26 @@ int				ft_fill_null(char **line)
 
 int				get_next_line(int fd, char **line)
 {
-	static char	*remainder;
+	static char	*remainder[256];
 
 	if (fd < 0 || !line || BUFFER_SIZE < 1)
 		return (-1);
-	if (!(ft_read_line(fd, &remainder)))
+	if (!(ft_read_line(fd, &remainder[fd])))
 		return (-1);
 	if (read(fd, 0, 0) == -1)
 		return (-1);
-	if (!remainder)
+	if (!remainder[fd])
 		return (ft_fill_null(line));
-	if ((ft_strchr(remainder, '\n')))
+	if ((ft_strchr(remainder[fd], '\n')))
 	{
-		*line = ft_strdup(remainder);
-		remainder = ft_substr(remainder);
+		*line = ft_strdup(remainder[fd]);
+		remainder[fd] = ft_substr(remainder[fd]);
 		return (1);
 	}
 	else
 	{
-		*line = ft_strdup(remainder);
-		remainder = ft_substr(remainder);
+		*line = ft_strdup(remainder[fd]);
+		remainder[fd] = ft_substr(remainder[fd]);
 	}
 	return (0);
 }

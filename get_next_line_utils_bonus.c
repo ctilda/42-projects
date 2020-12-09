@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctilda <ctilda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 06:29:51 by ctilda            #+#    #+#             */
-/*   Updated: 2020/12/09 17:53:34 by ctilda           ###   ########.fr       */
+/*   Created: 2020/12/09 09:52:00 by ctilda            #+#    #+#             */
+/*   Updated: 2020/12/09 17:53:50 by ctilda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t			ft_strlen(const char *s)
 {
