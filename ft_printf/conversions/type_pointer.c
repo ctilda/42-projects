@@ -78,6 +78,8 @@ void    type_pointer(t_struct *f, va_list ap, int oxheading)
     s = ft_itoa_base(pointer, 16);
     precisionp = f->precision - hexlenp;
     widthp = f->width - hexlenp - oxheading;
+    if (f->precisiontf && f->precision == 0 && pointer == 0)
+        widthp++;
     if (f->precisiontf && f->precision == 0)
         hexlenp = 0;
     if (f->minus)
