@@ -26,8 +26,8 @@ char        *ft_itoa_base(uintmax_t value, uintmax_t base)
     s[i] = '\0';
     while (i-- > 0)
     {
-        s[i] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
-        n /= base;
+        s[i] = (value % base < 10) ? value % base + '0' : value % base + 'a' - 10;
+        value /= base;
     }
     return (s);
 }
