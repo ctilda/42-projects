@@ -49,8 +49,8 @@ char        *ft_itoa_base_upper(intmax_t value, intmax_t base)
     n = (value < 0) ? -value : value;
     while (i-- + sign)
     {
-        s[i] = (n % base < 10) ? n % base + '0' : n % base + 'A' - 10;
-        n /= base;
+        s[i] = (value % base < 10) ? value % base + '0' : value % base + 'A' - 10;
+        value /= base;
     }
     (i == 0) ? s[i] = '-' : 0;
     return (s);
