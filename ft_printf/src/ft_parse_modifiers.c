@@ -59,7 +59,7 @@ void    ft_parse_precision(const char *format, t_struct *f, va_list ap, int p)
         if (format[i] >= '0' && format[i] <= '9')
         {
             f->precision = ft_atoi(&format[i]);
-            while (format[i] >= '0' && format[f->i] <= '9')
+            while (format[i] >= '0' && format[i] <= '9')
                 i++;
         }
         else if (format[i] == '*')
