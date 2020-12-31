@@ -87,7 +87,7 @@ void    formating_uint(uintmax_t n, t_struct *f, int sign)
     intlen = unsigned_nbr_len(n, 10);
     if (n == 0)
         intlen = 1;
-    if (f->precisiontf && f->precision == 0)
+    if (f->precisiontf && f->precision == 0 && n == 0)
         intlen = 0;
     if (f->precisiontf && f->precision > intlen)
         f->precision = f->precision - intlen;
