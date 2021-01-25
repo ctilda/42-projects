@@ -15,6 +15,14 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
+
+typedef	struct	s_list
+{
+	void          *content;
+	size_t        content_size;
+	struct s_list	*next;
+}				t_list;
 
 int		ft_isalnum(int ch);
 int		ft_isalpha(int ch);
